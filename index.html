@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جشنواره بهاری</title>
+    <style>
+        :root {
+            --border: 5px;
+        }
+
+        li {
+            border: 7px solid white;
+            border-radius: var(--border);
+            padding: 10px;
+            background-color: #F2F3F4;
+            margin: 10px;
+            text-align: center;
+            font-family: iransans;
+        }
+
+        .door {
+            overflow: hidden;
+            height: 133px;
+            width: 20%;
+            border: 10px #F2F3F4 !important;
+            color: #FFF;
+            text-align: center;
+            font-family: iransans;
+            font-size: 450%;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 0;
+        }
+
+        ul {
+            position: fixed;
+            background-color: #FF8C22;;
+            list-style-type: none;
+            padding: 0;
+            border-radius: 0px 0px 5% 5%;
+            margin-right: 5%;
+            margin-left: 5%;
+            box-shadow: 0 0 50px 0px rgba(30, 30, 30, 0.3);
+            margin-top: 0;
+            width: 20%;
+
+        }
+
+        ul.left {
+            right: 0;
+        }
+
+        ul.right {
+            left: 0;
+        }
+
+        li.top {
+            margin-top: 0;
+            border-radius: 0px 0px 5px 5px;
+            padding: 5%;
+            border: 0;
+        }
+
+        body {
+            background-image: url("./frame 16.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #F2F3F4;
+            margin: 0;
+        }
+
+        div.title {
+            text-align: center;
+            padding-top: 5%;
+            position: fixed;
+            width: 100%;
+            font-size: 250%;
+            font-family: iransans;
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: iransans;
+            src: url(IRANSansXV.ttf);
+        }
+
+        div.input-wrapper {
+            width: 100%;
+            display: inline-flex;
+            position: fixed;
+            height: 30%;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        div.input {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 19%;
+            width: 31%;
+            display: inline-flex;
+            height: 100%;
+            padding: 0 2%;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 1%;
+            flex-shrink: 0;
+            border-radius: 40px;
+            border: 10px solid #FFF;
+            background: #1D1D1B;
+            box-shadow: 0 27px 60px 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.12);
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxes {
+            font-family: iransans;
+            transition: transform 1s ease-in-out;
+        }
+
+        .box {
+            font-family: iransans;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*font-size: 3rem;*/
+        }
+    </style>
+    <!--    <link rel="stylesheet" href="style.css">-->
+
+</head>
+<body>
+<div class="title">جشنواره بهاری ۱۴۰۳ بانکینو</div>
+<div class="input-wrapper">
+    <div class="input">
+        <div class="door first-number">
+            <div class="boxes">
+            </div>
+        </div>
+        <div class="door middle-number">
+            <div class="boxes">
+            </div>
+        </div>
+        <div class="door middle-number">
+            <div class="boxes">
+            </div>
+        </div>
+        <div class="door middle-number">
+            <div class="boxes">
+            </div>
+        </div>
+        <div class="door middle-number">
+            <div class="boxes">
+            </div>
+        </div>
+        <div class="door last-number">
+            <div class="boxes">
+            </div>
+        </div>
+    </div>
+    <button id="spinner" onclick="spin()">سلام</button>
+</div>
+
+<ul class="right">
+    <li class="top">
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+
+</ul>
+
+
+<ul class="left">
+    <li class="top">
+        اسامی برندگان PS5
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+    <li>
+        اسامی برندگان آیفون
+    </li>
+
+</ul>
+
+
+</body>
+
+
+<script>
+
+    const fixedNumber = "572456";
+    const doors = document.querySelectorAll(".door");
+
+    async function spin() {
+        iteration=0
+        init(false, 1, 2);
+        for (const door of doors) {
+            const boxes = door.querySelector(".boxes");
+            const duration = parseInt(boxes.style.transitionDuration);
+            boxes.style.transform = "translateY(0)";
+            await new Promise((resolve) => setTimeout(resolve, duration * 100));
+        }
+    }
+
+    function toPersianNumeral(en) {
+        return "۰۱۲۳۴۵۶۷۸۹".slice(+en, +en + 1);
+    }
+
+    function createOrderedArrayWithLastNumber(lastNumber) {
+        let array = [];
+        let firstnumber = (lastNumber + 1) % 10;
+        for (let i = 0; i < 10; i++) {
+            array.push(toPersianNumeral((i + firstnumber) % 10))
+        }
+        return array;
+    }
+
+    let iteration = 0;
+
+    function init(firstInit = true, groups = 1, duration = 1) {
+        for (const door of doors) {
+            const boxes = door.querySelector(".boxes");
+            const boxesClone = boxes.cloneNode(false);
+
+            const pool = ["❓"];
+            if (!firstInit) {
+                let numbers = createOrderedArrayWithLastNumber(Number(fixedNumber[iteration++]));
+                pool.push(...numbers);
+
+                boxesClone.addEventListener(
+                    "transitionstart",
+                    function () {
+                        this.querySelectorAll(".box").forEach((box) => {
+                            box.style.filter = "blur(1px)";
+                        });
+                    },
+                    {once: true}
+                );
+
+                boxesClone.addEventListener(
+                    "transitionend",
+                    function () {
+                        this.querySelectorAll(".box").forEach((box, index) => {
+                            box.style.filter = "blur(0)";
+                            if (index > 0) this.removeChild(box);
+                        });
+                    },
+                    {once: true}
+                );
+            }
+
+            for (let i = pool.length - 1; i >= 0; i--) {
+                const box = document.createElement("div");
+                box.classList.add("box");
+                box.style.width = door.clientWidth + "px";
+                box.style.height = door.clientHeight + "px";
+                box.textContent = pool[i];
+                boxesClone.appendChild(box);
+            }
+            boxesClone.style.transitionDuration = `${duration > 0 ? duration : 1}s`;
+            boxesClone.style.transform = `translateY(-${
+                door.clientHeight * (pool.length - 1)
+            }px)`;
+            door.replaceChild(boxesClone, boxes);
+        }
+    }
+
+    init();
+</script>
+</html>
