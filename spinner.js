@@ -1,6 +1,15 @@
 const doors = document.querySelectorAll(".door");
+const stepSize = 8000;
+let currentIndex = 0;
+let gotoindex = ""
+
+function zeroPad(currentIndex) {
+    return String(currentIndex).padStart(6, '0')
+}
 
 async function spin() {
+    currentIndex += stepSize;
+    gotoindex = zeroPad(currentIndex);
     iteration = 0;
     init(false, 1, 2);
     for (const door of doors) {
@@ -30,7 +39,7 @@ function init(firstInit = true, groups = 1, duration = 1) {
 
         const pool = [""];
         if (!firstInit) {
-            let numbers = createOrderedArrayWithLastNumber(Number(fixedNumber[iteration++]));
+            let numbers = createOrderedArrayWithLastNumber(Number(gotoindex[iteration++]));
             pool.push(...numbers);
 
             boxesClone.addEventListener(

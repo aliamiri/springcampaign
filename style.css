@@ -3,13 +3,44 @@
 }
 
 li {
-    border: 7px solid white;
+    /*border: 7px solid white;*/
     border-radius: var(--border);
-    padding: 10px;
+    padding: 5%;
     background-color: #F2F3F4;
     margin: 10px;
     text-align: center;
     font-family: iransans;
+}
+
+li.top {
+    margin-top: 0;
+    border-radius: 0 0 var(--border) var(--border);
+    padding: 5%;
+    border: 0;
+}
+
+.winner-item-phone {
+    margin-top: -4%;
+    margin-right: -4%;
+    color: #1D1D1B;
+    text-align: right;
+    font-family: iransans;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: 700;
+    /*line-height: 40px;*/
+}
+
+.winner-item-name {
+    margin-bottom: -4%;
+    margin-right: -4%;
+    color: #1D1D1B;
+    text-align: right;
+    font-family: iransans;
+    font-size: 80%;
+    font-style: normal;
+    font-weight: 500;
+    /*line-height: 24px;*/
 }
 
 .chance-number {
@@ -44,18 +75,11 @@ ul {
 }
 
 ul.left {
-    right: 0;
-}
-
-ul.right {
     left: 0;
 }
 
-li.top {
-    margin-top: 0;
-    border-radius: 0px 0px 5px 5px;
-    padding: 5%;
-    border: 0;
+ul.right {
+    right: 0;
 }
 
 body {

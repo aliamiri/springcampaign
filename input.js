@@ -32,6 +32,7 @@ function confirm() {
     hideDiv('confirm');
     showDiv('iphone');
     showDiv('ps5');
+    currentIndex = Number(fixedNumber);
     fillWinner(Number(fixedNumber));
 }
 
