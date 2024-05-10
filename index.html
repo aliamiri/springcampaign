@@ -1,170 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جشنواره بهاری</title>
-    <style>
-        :root {
-            --border: 5px;
-        }
 
-        li {
-            border: 7px solid white;
-            border-radius: var(--border);
-            padding: 10px;
-            background-color: #F2F3F4;
-            margin: 10px;
-            text-align: center;
-            font-family: iransans;
-        }
-
-        .door {
-            overflow: hidden;
-            height: 133px;
-            width: 20%;
-            border: 10px #F2F3F4 !important;
-            color: #FFF;
-            text-align: center;
-            font-family: iransans;
-            font-size: 450%;
-            font-style: normal;
-            font-weight: 800;
-            line-height: 0;
-        }
-
-        ul {
-            position: fixed;
-            background-color: #FF8C22;;
-            list-style-type: none;
-            padding: 0;
-            border-radius: 0px 0px 5% 5%;
-            margin-right: 5%;
-            margin-left: 5%;
-            box-shadow: 0 0 50px 0px rgba(30, 30, 30, 0.3);
-            margin-top: 0;
-            width: 20%;
-
-        }
-
-        ul.left {
-            right: 0;
-        }
-
-        ul.right {
-            left: 0;
-        }
-
-        li.top {
-            margin-top: 0;
-            border-radius: 0px 0px 5px 5px;
-            padding: 5%;
-            border: 0;
-        }
-
-        body {
-            background-image: url("./frame 16.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-color: #F2F3F4;
-            margin: 0;
-        }
-
-        div.title {
-            text-align: center;
-            padding-top: 5%;
-            position: fixed;
-            width: 100%;
-            font-size: 250%;
-            font-family: iransans;
-            font-weight: bold;
-        }
-
-        @font-face {
-            font-family: iransans;
-            src: url(IRANSansXV.ttf);
-        }
-
-        div.input-wrapper {
-            width: 100%;
-            display: inline-flex;
-            position: fixed;
-            height: 30%;
-            align-content: center;
-            align-items: center;
-            align-self: center;
-            text-align: center;
-        }
-
-        div.input {
-            margin-right: auto;
-            margin-left: auto;
-            margin-top: 19%;
-            width: 31%;
-            display: inline-flex;
-            height: 100%;
-            padding: 0 2%;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 1%;
-            flex-shrink: 0;
-            border-radius: 40px;
-            border: 10px solid #FFF;
-            background: #1D1D1B;
-            box-shadow: 0 27px 60px 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.12);
-        }
-
-        table {
-            width: 100%;
-            height: 100%;
-        }
-
-        .boxes {
-            font-family: iransans;
-            transition: transform 1s ease-in-out;
-        }
-
-        .box {
-            font-family: iransans;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /*font-size: 3rem;*/
-        }
-    </style>
-    <!--    <link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css"/>
 
 </head>
 <body>
 <div class="title">جشنواره بهاری ۱۴۰۳ بانکینو</div>
 <div class="input-wrapper">
-    <div class="input">
-        <div class="door first-number">
+    <div class="input-wrapper-inside winner" id="winner">
+        <div class="winner-phone">
+            ۰۹۳۸****۵۶۹
+        </div>
+        <div class="winner-name">
+            ناصرخان داورزنی اصل کَسکنی سفلی
+        </div>
+        <div class="winner-chance" dir="rtl">
+            ۱۳۸۹ شانس
+        </div>
+    </div>
+
+    <div class="input-wrapper-inside input" id="input">
+        <div class="chance-number chance-number-input first-number" contenteditable="true"
+             oninput="convertInputToPersianNumerals(this); jumpToNext(this)"></div>
+        <div class="chance-number chance-number-input" contenteditable="true"
+             oninput="convertInputToPersianNumerals(this); jumpToNext(this)"></div>
+        <div class="chance-number chance-number-input" contenteditable="true"
+             oninput="convertInputToPersianNumerals(this); jumpToNext(this)"></div>
+        <div class="chance-number chance-number-input" contenteditable="true"
+             oninput="convertInputToPersianNumerals(this); jumpToNext(this)"></div>
+        <div class="chance-number chance-number-input" contenteditable="true"
+             oninput="convertInputToPersianNumerals(this); jumpToNext(this)"></div>
+        <div class="chance-number chance-number-input" contenteditable="true"
+             oninput="convertInputToPersianNumerals(this); jumpToNext(this)"></div>
+    </div>
+
+    <div class="input-wrapper-inside spinner" id="spinner">
+        <div class="chance-number door first-number">
             <div class="boxes">
             </div>
         </div>
-        <div class="door middle-number">
+        <div class="chance-number door middle-number">
             <div class="boxes">
             </div>
         </div>
-        <div class="door middle-number">
+        <div class="chance-number door middle-number">
             <div class="boxes">
             </div>
         </div>
-        <div class="door middle-number">
+        <div class="chance-number door middle-number">
             <div class="boxes">
             </div>
         </div>
-        <div class="door middle-number">
+        <div class="chance-number door middle-number">
             <div class="boxes">
             </div>
         </div>
-        <div class="door last-number">
+        <div class="chance-number door last-number">
             <div class="boxes">
             </div>
         </div>
     </div>
-    <button id="spinner" onclick="spin()">سلام</button>
+    <br>
+    <div class="generic-button black-button confirm-button" onclick="confirm()" id="confirm">تایید</div>
+    <div class="generic-button black-button next-button" onclick="spin()" id="next">برنده بعدی</div>
+    <div class="generic-button black-button end-button" onclick="end()" id="end">پایان قرعه‌کشی</div>
+    <div class="generic-button ps5-button" onclick="ps5()" id="ps5">PS5</div>
+    <div class="generic-button iphone-button" onclick="iphone()" id="iphone">آیفون</div>
 </div>
 
 <ul class="right">
@@ -214,15 +119,104 @@
 
 
 </body>
-
-
+<script src="shuffled_indexed_records.js"></script>
 <script>
 
-    const fixedNumber = "572456";
+    let fixedNumber = "572456";
+    const persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+    function toPersianNumeral(digit) {
+        return persianNumbers[digit];
+    }
+    function toPersianNumberWholeNumber(number){
+        return number
+            .toString()
+            .replace(/\d/g, x => persianNumbers[x]);
+    }
+
+    function hideDiv(divId) {
+        document.getElementById(divId).style.display = 'none';
+    }
+
+    function showDiv(divId) {
+        document.getElementById(divId).style.display = 'inline-flex'; // or 'inline', 'inline-block', etc., depending on your layout
+    }
+
+    //Input Code
+    function convertInputToPersianNumerals(input) {
+        console.log(input)
+        input.innerHTML = input.innerHTML.replace(/\d/g, function (digit) {
+            return persianNumbers[digit];
+        });
+    }
+
+    function jumpToNext(element) {
+        if (element.textContent.length === 1 && element.nextElementSibling && element.nextElementSibling.classList.contains('chance-number-input')) {
+            element.nextElementSibling.focus();
+        }
+    }
+
+    function convertPersianNumeralsToEnglish(persianNumerals) {
+        const persianToEnglish = {
+            '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4',
+            '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9'
+        };
+        return persianNumerals.join('').split('').map(num => persianToEnglish[num] || num).join('');
+    }
+
+    function confirm() {
+        let results = [];
+        let chanceNumbers = document.querySelectorAll('.chance-number-input');
+        chanceNumbers.forEach(function (div) {
+            results.push(div.textContent);
+        });
+        fixedNumber = convertPersianNumeralsToEnglish(results);
+        console.log("initial number is : " + fixedNumber);
+        hideDiv('input');
+        showDiv('winner');
+        hideDiv('confirm');
+        showDiv('iphone');
+        showDiv('ps5');
+        fillWinner(Number(fixedNumber));
+    }
+
+    window.onload = function () {
+        document.querySelector('.first-number').focus();
+    };
+
+    //Winner Codes
+    String.prototype.replaceAt = function(index, replacement) {
+        return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+    }
+
+    function fillWinner(winnerIndex) {
+        let winner = data.records.filter(it => it.i === winnerIndex)[0];
+        console.log(winner)
+        let divs = document.querySelectorAll('.winner-phone');
+        divs.forEach(function (div) {
+            let toPersianNumberWholeNumber1 = toPersianNumberWholeNumber(winner.u)+"";
+            console.log(toPersianNumberWholeNumber1)
+            div.innerHTML = toPersianNumberWholeNumber1.replaceAt(4, "****");
+        });
+        divs = document.querySelectorAll('.winner-name');
+        divs.forEach(function (div) {
+            div.innerHTML = winner.n;
+        });
+        divs = document.querySelectorAll('.winner-chance');
+        divs.forEach(function (div) {
+            div.innerHTML = toPersianNumberWholeNumber(winner.p) + ' شانس';
+        });
+    }
+
+    //Iphone PS5 codes
+    let iphoneIndex = 0;
+    let ps5Index = 0;
+
+    //Spinner Codes
     const doors = document.querySelectorAll(".door");
 
     async function spin() {
-        iteration=0
+        iteration = 0;
         init(false, 1, 2);
         for (const door of doors) {
             const boxes = door.querySelector(".boxes");
@@ -232,9 +226,6 @@
         }
     }
 
-    function toPersianNumeral(en) {
-        return "۰۱۲۳۴۵۶۷۸۹".slice(+en, +en + 1);
-    }
 
     function createOrderedArrayWithLastNumber(lastNumber) {
         let array = [];
@@ -252,7 +243,7 @@
             const boxes = door.querySelector(".boxes");
             const boxesClone = boxes.cloneNode(false);
 
-            const pool = ["❓"];
+            const pool = [""];
             if (!firstInit) {
                 let numbers = createOrderedArrayWithLastNumber(Number(fixedNumber[iteration++]));
                 pool.push(...numbers);
@@ -294,6 +285,30 @@
             door.replaceChild(boxesClone, boxes);
         }
     }
+
+    function getRecordByIndex(index, callback) {
+        fetch('shuffled_indexed_records.json')
+            .then(response => response.json())
+            .then(data => {
+                const record = data.find(r => r.INDEX === index);
+                if (record) {
+                    callback(null, record);
+                } else {
+                    callback('Record not found', null);
+                }
+            })
+            .catch(error => {
+                callback(error, null);
+            });
+    }
+
+    getRecordByIndex(5, (error, record) => {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log('Record Information:', record);
+        }
+    });
 
     init();
 </script>
