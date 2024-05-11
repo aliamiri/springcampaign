@@ -18,8 +18,26 @@ async function spin() {
         boxes.style.transform = "translateY(0)";
         await new Promise((resolve) => setTimeout(resolve, duration * 100));
     }
+    setTimeout(showWinner, 3000);
 }
 
+function showWinner() {
+    console.log('Hello, World!' );
+    let results = [];
+    let chanceNumbers = document.querySelectorAll('.box');
+    chanceNumbers.forEach(function (div) {
+        results.push(div.textContent);
+    });
+    console.log(results)
+    hideDiv('next');
+    showDiv('winner');
+    hideDiv('spinner');
+    showDiv('iphone');
+    showDiv('ps5');
+
+    fillWinner(currentIndex);
+
+}
 
 function createOrderedArrayWithLastNumber(lastNumber) {
     let array = [];
@@ -79,29 +97,5 @@ function init(firstInit = true, groups = 1, duration = 1) {
         door.replaceChild(boxesClone, boxes);
     }
 }
-
-function getRecordByIndex(index, callback) {
-    fetch('shuffled_indexed_records.json')
-        .then(response => response.json())
-        .then(data => {
-            const record = data.find(r => r.INDEX === index);
-            if (record) {
-                callback(null, record);
-            } else {
-                callback('Record not found', null);
-            }
-        })
-        .catch(error => {
-            callback(error, null);
-        });
-}
-
-getRecordByIndex(5, (error, record) => {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log('Record Information:', record);
-    }
-});
 
 init();

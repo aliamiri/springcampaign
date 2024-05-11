@@ -3,7 +3,7 @@ String.prototype.replaceAt = function (index, replacement) {
 }
 
 function maskPhoneNumber(phoneNumber) {
-    return toPersianNumberWholeNumber(phoneNumber).replaceAt(4, "****");
+    return toPersianNumberWholeNumber(phoneNumber).replaceAt(4, "***");
 }
 
 
@@ -45,7 +45,7 @@ function iphone() {
     if (iphoneIndex === 5) {
         //Todo disable button - change color
     }
-    if (iphoneIndex === 5 && ps5Index === 5) {
+    if (iphoneIndex === 5 && ps5Index === 6) {
         showDiv('end')
     } else {
         showDiv('spinner')
@@ -67,12 +67,14 @@ function ps5() {
     });
     hideDiv('iphone')
     hideDiv('ps5')
+    hideDiv('winner')
     if (ps5Index === 5) {
         //Todo disable button - change color
     }
-    if (iphoneIndex === 5 && ps5Index === 5) {
+    if (iphoneIndex === 6 && ps5Index === 5) {
         showDiv('end')
     } else {
+        showDiv('spinner')
         showDiv('next')
     }
     ps5Index += 1;

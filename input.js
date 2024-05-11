@@ -25,6 +25,7 @@ function confirm() {
     chanceNumbers.forEach(function (div) {
         results.push(div.textContent);
     });
+    //results could be used
     fixedNumber = convertPersianNumeralsToEnglish(results);
     console.log("initial number is : " + fixedNumber);
     hideDiv('input');
