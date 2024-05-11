@@ -8,6 +8,7 @@ function zeroPad(currentIndex) {
 }
 
 async function spin() {
+    disableClick('next');
     currentIndex += stepSize;
     gotoindex = zeroPad(currentIndex);
     iteration = 0;
@@ -21,20 +22,29 @@ async function spin() {
     setTimeout(showWinner, 3000);
 }
 
+function fillBoxesWithNothing() {
+    let divs = document.querySelectorAll('.box');
+    divs.forEach(function (div) {
+        div.innerHTML = '&nbsp';
+    });
+}
+
 function showWinner() {
-    console.log('Hello, World!' );
+    console.log('Hello, World!');
+    fillBoxesWithNothing();
     let results = [];
     let chanceNumbers = document.querySelectorAll('.box');
     chanceNumbers.forEach(function (div) {
         results.push(div.textContent);
     });
-    console.log(results)
+    //If we select winner without fixed step, we could use results.
     hideDiv('next');
+    enableClick('next');
+    document.getElementById('next').style.background = '#1D1D1B';
     showDiv('winner');
     hideDiv('spinner');
     showDiv('iphone');
     showDiv('ps5');
-
     fillWinner(currentIndex);
 
 }
