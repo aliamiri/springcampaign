@@ -76,6 +76,7 @@ function iphone() {
 function ps5() {
     let phoneClassName = '.winner-item-phone-ps5-' + ps5Index;
     let nameClassName = '.winner-item-name-ps5-' + ps5Index;
+    let wrapperClassName = '.winner-ps5-' + iphoneIndex;
     divs = document.querySelectorAll(phoneClassName);
     divs.forEach(function (div) {
         div.innerHTML = maskPhoneNumber(winner.u);
@@ -83,6 +84,10 @@ function ps5() {
     divs = document.querySelectorAll(nameClassName);
     divs.forEach(function (div) {
         div.innerHTML = winner.n;
+    });
+    divs = document.querySelectorAll(wrapperClassName)
+    divs.forEach(function (div) {
+        div.style.background = '#F2F3F4';
     });
     hideDiv('iphone')
     hideDiv('ps5')

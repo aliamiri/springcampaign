@@ -1,18 +1,22 @@
 .chance-number {
     overflow: hidden;
     height: 100%;
-    width: 20%;
-    border: 10px #F2F3F4 !important;
+    width: 16%;
+    border-right: 2px solid #FFF;
     color: #FFF;
     text-align: center;
     horiz-align: center;
     font-family: iransans;
     justify-content: center;
-    font-size: 700%;
     font-style: normal;
     font-weight: 800;
     display: flex;
-    /*line-height: 100%;*/
+    align-items: center;
+    font-size: 160px;
+}
+
+.last-number{
+    border: 0;
 }
 
 .door {
@@ -28,13 +32,28 @@ body {
 }
 
 div.title {
-    text-align: center;
-    padding-top: 5%;
-    position: fixed;
+    /*text-align: center;*/
+    /*padding-top: 5%;*/
+    /*position: fixed;*/
+    /*width: 100%;*/
+    /*font-size: 250%;*/
+    /*font-family: iransans;*/
+    /*font-weight: bold;*/
+    display: inline-flex;
     width: 100%;
-    font-size: 250%;
+    height: 88px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #1D1D1B;
+    text-align: center;
+    position: fixed;
     font-family: iransans;
-    font-weight: bold;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 24px;
+    margin-top: 106px;
 }
 
 @font-face {
@@ -44,7 +63,6 @@ div.title {
 
 div.input-wrapper {
     width: 100%;
-    /*display: inline-flex;*/
     position: fixed;
     height: 30%;
     align-content: center;
@@ -54,38 +72,33 @@ div.input-wrapper {
 }
 
 div.input-wrapper-inside {
+    width: 976px;
+    height: 292px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 9%;
-    width: 31%;
-    height: 100%;
-    padding: 0 2%;
+    margin-top: 242px;
     justify-content: center;
     align-items: flex-end;
-    gap: 1%;
     flex-shrink: 0;
-    border-radius: 40px;
-    border: 10px solid #FFF;
     background: #1D1D1B;
-    box-shadow: 0 27px 60px 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.12);
+    border-radius: 80px;
+    border: 20px solid #FFF;
+    box-shadow: 0 27px 60px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
 }
 
 div.winner {
+    width: 976px;
+    height: 292px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 9%;
-    width: 31%;
-    height: 100%;
-    padding: 0 2%;
+    margin-top: 242px;
     justify-content: center;
     align-items: flex-end;
-    gap: 1%;
     flex-shrink: 0;
-    border-radius: 40px;
-    border: 10px solid #FFF;
     background: #FFF;
-    /*box-shadow: 0 2px 30px 0px rgba(127, 131, 142, 0.20);*/
-    box-shadow: 0 27px 60px 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.12);
+    border-radius: 80px;
+    border: 20px solid #FFF;
+    box-shadow: 0 2px 30px 0 rgba(127, 131, 142, 0.20);
     text-align: center;
     font-family: iransans;
     font-style: normal;
@@ -96,7 +109,6 @@ div.winner {
 
 .winner-phone {
     color: #1D1D1B;
-    font-size: 200%;
     /*line-height: 62.5%;*/
     display: inline-flex;
     width: 100%;
@@ -104,30 +116,41 @@ div.winner {
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
+    text-align: center;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
 }
 
 .winner-name {
     color: #1D1D1B;
-    font-size: 125%;
-    /*line-height: 62.5%;*/
     display: inline-flex;
     width: 100%;
     height: 30%;
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
 }
 
 .winner-chance {
     color: #FF8C22;
-    font-size: 150%;
-    /*line-height: 62.5%;*/
     display: inline-flex;
     width: 100%;
     height: 30%;
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
 }
 
 div.spinner {
@@ -136,7 +159,6 @@ div.spinner {
 
 div.input {
     display: inline-flex;
-    /*display: none;*/
 }
 
 table {
@@ -159,13 +181,21 @@ table {
 .generic-button {
     margin-right: auto;
     margin-left: auto;
-    margin-top: 2%;
-    width: 10%;
-    height: 30%;
+    border-radius: 24px;
+    margin-top: 48px;
+    /*margin-top: 2%;*/
+    /*width: 10%;*/
+    /*height: 30%;*/
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-radius: 16px;
+
+    display: flex;
+    width: 327px;
+    height: 80px;
+    padding: 20px 44px;
+
+
 }
 
 .black-button {
@@ -173,9 +203,10 @@ table {
     color: #FFF;
     text-align: center;
     font-family: iransans;
-    font-size: 90%;
     font-style: normal;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 24px
 }
 
 .next-button {
@@ -197,9 +228,10 @@ table {
     color: #1D1D1B;
     text-align: center;
     font-family: iransans;
-    font-size: 90%;
     font-style: normal;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 24px
 }
 
 .ps5-button {
@@ -208,8 +240,10 @@ table {
     color: #1D1D1B;
     text-align: center;
     font-family: iransans;
-    font-size: 90%;
     font-style: normal;
-    font-weight: 700;
     margin-right: 2%;
+
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 24px
 }
