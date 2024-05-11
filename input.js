@@ -5,6 +5,12 @@ function convertInputToPersianNumerals(input) {
     });
 }
 
+function limitToOneDigit(element) {
+    if (element.innerText.length > 1) {
+        element.innerText = element.innerText.charAt(0); // Keep only the first character
+    }
+}
+
 function jumpToNext(element) {
     if (element.textContent.length === 1 && element.nextElementSibling && element.nextElementSibling.classList.contains('chance-number-input')) {
         element.nextElementSibling.focus();
