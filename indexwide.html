@@ -26,17 +26,17 @@
 
     <div class="input-wrapper-inside input" id="input">
         <div class="chance-number chance-number-input first-number" contenteditable="true"
-             oninput="convertInputToPersianNumerals(this); jumpToNext(this); limitToOneDigit(this)"></div>
+             oninput="convertInputToPersianNumerals(this); jumpToPrev(this); limitToOneDigit(this)"></div>
         <div class="chance-number chance-number-input" contenteditable="true"
-             oninput="convertInputToPersianNumerals(this); jumpToNext(this); limitToOneDigit(this)"></div>
+             oninput="convertInputToPersianNumerals(this); jumpToPrev(this); limitToOneDigit(this)"></div>
         <div class="chance-number chance-number-input" contenteditable="true"
-             oninput="convertInputToPersianNumerals(this); jumpToNext(this); limitToOneDigit(this)"></div>
+             oninput="convertInputToPersianNumerals(this); jumpToPrev(this); limitToOneDigit(this)"></div>
         <div class="chance-number chance-number-input" contenteditable="true"
-             oninput="convertInputToPersianNumerals(this); jumpToNext(this); limitToOneDigit(this)"></div>
+             oninput="convertInputToPersianNumerals(this); jumpToPrev(this); limitToOneDigit(this)"></div>
         <div class="chance-number chance-number-input" contenteditable="true"
-             oninput="convertInputToPersianNumerals(this); jumpToNext(this); limitToOneDigit(this)"></div>
+             oninput="convertInputToPersianNumerals(this); jumpToPrev(this); limitToOneDigit(this)"></div>
         <div class="chance-number chance-number-input last-number" contenteditable="true"
-             oninput="convertInputToPersianNumerals(this); jumpToNext(this); limitToOneDigit(this)"></div>
+             oninput="convertInputToPersianNumerals(this); jumpToPrev(this); limitToOneDigit(this)"></div>
     </div>
 
     <div class="input-wrapper-inside spinner" id="spinner">
@@ -204,6 +204,7 @@
     function disableClick(divId) {
         document.getElementById(divId).style.pointerEvents = 'none';
         document.getElementById(divId).style.background = '#B2B5BB';
+        document.getElementById(divId).style.color = '#FFF'
     }
 
 </script>

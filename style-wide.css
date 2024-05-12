@@ -53,7 +53,7 @@ div.title {
     font-style: normal;
     font-weight: 900;
     line-height: 24px;
-    margin-top: 106px;
+    margin-top: 90px;
 }
 
 @font-face {
@@ -76,7 +76,7 @@ div.input-wrapper-inside {
     height: 292px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 242px;
+    margin-top: 224px;
     justify-content: center;
     align-items: flex-end;
     flex-shrink: 0;
@@ -189,11 +189,12 @@ table {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    padding: 0;
 
     display: flex;
     width: 327px;
     height: 80px;
-    padding: 20px 44px;
+    /*padding: 20px 44px;*/
 
 
 }

@@ -19,7 +19,7 @@ async function spin() {
         boxes.style.transform = "translateY(0)";
         await new Promise((resolve) => setTimeout(resolve, duration * 100));
     }
-    // setTimeout(showWinner, 3000);
+    setTimeout(showWinner, 5000);
 }
 
 function fillBoxesWithNothing() {

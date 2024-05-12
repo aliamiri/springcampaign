@@ -6,10 +6,10 @@
     box-shadow: 0 0 100px -62px #1E1E1E;
     position: fixed;
     list-style-type: none;
-    padding: 0;
     margin-right: 80px;
     margin-left: 80px;
     margin-top: 0;
+    padding: 24px 0 0;
 }
 
 .winner-list.left {

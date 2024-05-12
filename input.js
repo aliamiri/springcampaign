@@ -7,13 +7,22 @@ function convertInputToPersianNumerals(input) {
 
 function limitToOneDigit(element) {
     if (element.innerText.length > 1) {
-        element.innerText = element.innerText.charAt(0); // Keep only the first character
+        element.innerText = element.innerText.charAt(0);
+        // if (!/^\d$/.test(element.innerText)) {
+        //     element.innerText = '0';
+        // }
     }
 }
 
 function jumpToNext(element) {
     if (element.textContent.length === 1 && element.nextElementSibling && element.nextElementSibling.classList.contains('chance-number-input')) {
         element.nextElementSibling.focus();
+    }
+}
+
+function jumpToPrev(element) {
+    if (element.textContent.length === 1 && element.previousElementSibling && element.previousElementSibling.classList.contains('chance-number-input')) {
+        element.previousElementSibling.focus();
     }
 }
 
@@ -44,5 +53,5 @@ function confirm() {
 }
 
 window.onload = function () {
-    document.querySelector('.first-number').focus();
+    document.querySelector('.last-number').focus();
 };

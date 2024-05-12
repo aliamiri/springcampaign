@@ -27,7 +27,7 @@ function fillWinner(winnerIndex) {
     });
     divs = document.querySelectorAll('.winner-name');
     divs.forEach(function (div) {
-        div.innerHTML = winner.n;
+        div.innerHTML = replaceye(winner.n);
     });
     divs = document.querySelectorAll('.winner-chance');
     divs.forEach(function (div) {
@@ -50,7 +50,7 @@ function iphone() {
     });
     divs = document.querySelectorAll(nameClassName);
     divs.forEach(function (div) {
-        div.innerHTML = winner.n;
+        div.innerHTML = replaceye(winner.n);
     });
     divs = document.querySelectorAll(wrapperClassName)
     divs.forEach(function (div) {
@@ -76,14 +76,14 @@ function iphone() {
 function ps5() {
     let phoneClassName = '.winner-item-phone-ps5-' + ps5Index;
     let nameClassName = '.winner-item-name-ps5-' + ps5Index;
-    let wrapperClassName = '.winner-ps5-' + iphoneIndex;
+    let wrapperClassName = '.winner-ps5-' + ps5Index;
     divs = document.querySelectorAll(phoneClassName);
     divs.forEach(function (div) {
         div.innerHTML = maskPhoneNumber(winner.u);
     });
     divs = document.querySelectorAll(nameClassName);
     divs.forEach(function (div) {
-        div.innerHTML = winner.n;
+        div.innerHTML = replaceye(winner.n);
     });
     divs = document.querySelectorAll(wrapperClassName)
     divs.forEach(function (div) {
@@ -93,7 +93,6 @@ function ps5() {
     hideDiv('ps5')
     hideDiv('winner')
     if (ps5Index === 5) {
-        //Change color
         disableClick('ps5');
     }
     if (iphoneIndex === 6 && ps5Index === 5) {
@@ -103,4 +102,9 @@ function ps5() {
         showDiv('next')
     }
     ps5Index += 1;
+}
+
+
+function replaceye(name) {
+    return name.replace(/ي/g, 'ی');
 }
